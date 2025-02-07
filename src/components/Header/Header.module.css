@@ -1,0 +1,16 @@
+.link {
+    color: rgb(40, 38, 38);
+    font-size: 26px;
+    text-decoration: none;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+    background-color: rgb(169, 236, 249);
+}
+
+.active {
+    color: red;
+    text-decoration: underline;
+}
