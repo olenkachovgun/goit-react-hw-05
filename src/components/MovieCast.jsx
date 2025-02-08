@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 const MovieCast = () => {
   const { movieId } = useParams();
   const [cast, setCast] = useState([]);
+  const defaultImg =
+    "https://dummyimage.com/400x600/cdcdcd/000.jpg&text=No+poster";
 
   useEffect(() => {
     const getData = async () => {
@@ -25,7 +27,11 @@ const MovieCast = () => {
             return (
               <li key={item.castId}>
                 <img
-                  src={`https://image.tmdb.org/t/p/w500/${item.profile_path}`}
+                  src={
+                    item.profile_path
+                      ? `https://image.tmdb.org/t/p/w500/${item.profile_path}`
+                      : defaultImg
+                  }
                   alt="photo"
                   width="100"
                 />

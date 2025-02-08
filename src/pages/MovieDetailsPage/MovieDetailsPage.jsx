@@ -1,11 +1,21 @@
-import { useEffect, useState } from "react";
-import { NavLink, Outlet, useParams } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import {
+  Link,
+  Outlet,
+  useLocation,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
 import { fetchMovieId } from "../../services/api";
 import Navigation from "../../components/Navigation";
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
+  const navigate = useNavigate();
   const [movie, setMovie] = useState(null);
+  const location = useLocation();
+  const goBackUrl = useRef(location?.state ?? "/users");
+
   const defaultImg =
     "https://dummyimage.com/400x600/cdcdcd/000.jpg&text=No+poster";
 
@@ -16,13 +26,16 @@ const MovieDetailsPage = () => {
     };
     getData();
   }, [movieId]);
-  console.log(movie);
+
   if (!movie) {
     return <h2>Loading...</h2>;
   }
   return (
     <div>
-      MovieDetailsPage {movieId}
+      <Link to={goBackUrl.current}> Go back </Link>
+      {/* <button type="button" onClick={() => navigate(-1)}>
+        Go back
+      </button> */}
       <div>
         <img
           src={

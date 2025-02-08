@@ -30,7 +30,7 @@ const MovieReviews = () => {
           );
         })
       ) : (
-        <h2>No reviews</h2>
+        <h2>No reviews available for this movie.</h2>
       )}
     </div>
   );
