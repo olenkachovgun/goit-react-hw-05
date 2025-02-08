@@ -1,14 +1,11 @@
-// import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "../components/Header/Header";
 import HomePage from "../pages/HomePage/HomePage";
 import MoviesPage from "../pages/MoviesPage/MoviesPage";
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
-// import MovieDetailsPage from "../pages/MovieDetailsPage/MovieDetailsPage";
-// import MovieCast from "../components/MovieCast";
-// import MovieReviews from "../components/MovieReviews";
 import { lazy, Suspense } from "react";
+
 const MovieDetailsPage = lazy(() =>
   import("../pages/MovieDetailsPage/MovieDetailsPage")
 );

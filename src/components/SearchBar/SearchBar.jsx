@@ -12,7 +12,7 @@ const SearchBar = ({ handleChangeQuery }) => {
   };
 
   return (
-    <div className={s.header}>
+    <div>
       <Formik initialValues={initialValues} onSubmit={onSubmit}>
         <Form>
           <button type="submit">
@@ -23,7 +23,7 @@ const SearchBar = ({ handleChangeQuery }) => {
             type="text"
             autoComplete="off"
             autoFocus
-            placeholder="Search movies"
+            placeholder="Search for a movie..."
           />
         </Form>
       </Formik>

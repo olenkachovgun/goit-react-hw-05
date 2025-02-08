@@ -5,10 +5,10 @@ const MovieList = ({ movies }) => {
   console.log(location);
   return (
     <div>
-      <ul>
+      <ul className="movieList">
         {movies.map((item) => {
           return (
-            <li key={item.id}>
+            <li className="movieItem" key={item.id}>
               <Link to={`/movies/${item.id.toString()}`} state={location}>
                 {item.title}
               </Link>

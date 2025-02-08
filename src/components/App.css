@@ -3,3 +3,44 @@
   margin: 0 auto;
   /* text-align: center; */
 }
+
+.homeConteiner {
+  padding: 10px 50px;
+  background: linear-gradient(to right, #88cca4, #21b9d6);
+}
+
+h2 {
+  text-align: center;
+  color: #032541;
+  text-shadow: #f3f6f8 1px 4px 6px;
+}
+
+.movieList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-radius: 8px;
+  background-color: #f3f6f8;
+  width: 60%;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+.movieItem {
+  font-size: 18px;
+  transition: background 0.s ease-in-out;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+.movieItem:hover {
+  background: linear-gradient(to right, #88cca4, #21b9d6);
+  font-weight: 600;
+  cursor: pointer;
+  color: #032541;
+  text-decoration: underline;
+}

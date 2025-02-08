@@ -1,11 +1,9 @@
-.header {
-    background-color: rgb(7, 62, 61);
-    width: 100%;
-    padding: 10px 0;
-}
-
 form {
     position: relative;
+    width: 285px;
+    margin: 0 auto;
+    padding: 20px;
+
 }
 
 button[type="submit"] {
@@ -24,8 +22,8 @@ button[type="submit"] {
 }
 
 input {
-    min-width: 235px;
-    padding: 6px 10px 6px 28px;
+    min-width: 285px;
+    padding: 8px 20px 8px 34px;
     outline: none;
     border: none;
     border-radius: 8px;

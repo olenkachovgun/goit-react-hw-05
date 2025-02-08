@@ -1,5 +1,13 @@
+header {
+    background-color: #032541;
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;
+
+}
+
 .link {
-    color: rgb(40, 38, 38);
+    color: rgb(243, 237, 237);
     font-size: 26px;
     text-decoration: none;
 }
@@ -7,10 +15,15 @@
 .nav {
     display: flex;
     gap: 20px;
-    background-color: rgb(169, 236, 249);
+    justify-content: right;
+}
+
+.nav a:hover {
+
+    font-weight: 600;
 }
 
 .active {
-    color: red;
+    color: #21b9d6;
     text-decoration: underline;
 }

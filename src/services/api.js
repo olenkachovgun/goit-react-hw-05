@@ -3,7 +3,6 @@ import axios from "axios";
 const API_Token =
   "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxOThhZmFiODJmNDI2NDEyZjgxZWQ4ZTVlNGExZDI5OSIsIm5iZiI6MTczODk1MjEzMS4yMjQsInN1YiI6IjY3YTY0ZGMzMWZjYmZlZTU0ZDMwMGM3NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.NuOzcHjXpOwDp2M1t9nKoBx_ePOTghZnfnnCEVh_d4I";
 
-// ====
 const BASE_URL = "https://api.themoviedb.org/3";
 
 const options = {
@@ -39,7 +38,7 @@ export const fetchMovieReviews = async (movieId) => {
 
 export const fetchMovieQuery = async (query) => {
   const { data } = await axios.get(
-    `${BASE_URL}/search/movie?query=${query}&include_adult=false&language=en-US`,
+    `${BASE_URL}/search/movie?query=${query}`,
     options
   );
   return data.results;

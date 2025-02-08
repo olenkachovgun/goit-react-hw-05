@@ -21,6 +21,14 @@ body {
   min-height: 100vh; */
 }
 
-/* ul {
+
+ul {
   list-style-type: none;
-} */
+  padding-left: 0;
+}
+
+p,
+h2,
+h3 {
+  margin: 0;
+}
