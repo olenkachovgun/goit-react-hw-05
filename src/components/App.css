@@ -64,6 +64,7 @@ a {
 .movieDetails {
   background-color: #f3f6f8;
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   width: 100%;
   min-width: 320px;
@@ -75,11 +76,21 @@ a {
   margin-bottom: 8px;
 }
 
+@media (min-width: 768px) {
+  .movieDetails {
+    flex-wrap: nowrap;
+  }
+}
+
+
+
 .movieDetails h2 {
   text-align: left;
 }
 
 .movieImg {
+  object-fit: cover;
+  height: 300px;
   width: 200px;
   border-radius: 8px;
   box-shadow: 1px 1px 5px #022943;
