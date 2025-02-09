@@ -32,15 +32,12 @@ const MoviesPage = () => {
     setSearchParams(searchParams);
     setIsFirstLoad(false);
   };
-  const filteredData = movies.filter((movie) =>
-    movie.title.toLowerCase().includes(query.toLowerCase())
-  );
 
   return (
     <div className="homeConteiner">
       <SearchBar handleChangeQuery={handleChangeQuery} query={query} />
-      {query && filteredData.length > 0 ? (
-        <MovieList movies={filteredData} />
+      {query && movies.length > 0 ? (
+        <MovieList movies={movies} />
       ) : (
         !isFirstLoad && (
           <p className="noMovies">

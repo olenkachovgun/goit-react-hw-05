@@ -1,4 +1,6 @@
 import { NavLink } from "react-router-dom";
+import { IoIosPeople } from "react-icons/io";
+import { MdOutlineRateReview } from "react-icons/md";
 
 const Navigation = ({ movieId }) => {
   return (
@@ -9,12 +11,14 @@ const Navigation = ({ movieId }) => {
           <li>
             <NavLink className="btn" to={`/movies/${movieId}/cast`}>
               {" "}
+              <IoIosPeople className="icon" />
               Cast{" "}
             </NavLink>
           </li>
           <li>
             <NavLink className="btn" to={`/movies/${movieId}/reviews`}>
               {" "}
+              <MdOutlineRateReview className="icon" />
               Reviews{" "}
             </NavLink>
           </li>

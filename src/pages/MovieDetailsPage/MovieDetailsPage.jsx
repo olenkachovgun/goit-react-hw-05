@@ -7,14 +7,15 @@ import {
   useParams,
 } from "react-router-dom";
 import { fetchMovieId } from "../../services/api";
-import Navigation from "../../components/Navigation";
+import Navigation from "../../components/NavigationMovie";
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const navigate = useNavigate();
   const [movie, setMovie] = useState(null);
   const location = useLocation();
-  const goBackUrl = useRef(location?.state ?? "/users");
+  const goBackUrl = useRef(location?.state ?? "/movies");
 
   const defaultImg =
     "https://dummyimage.com/400x600/cdcdcd/000.jpg&text=No+poster";
@@ -33,8 +34,7 @@ const MovieDetailsPage = () => {
   return (
     <div className="homeConteiner">
       <Link className="btn" to={goBackUrl.current}>
-        {" "}
-        Go back{" "}
+        <IoMdArrowRoundBack className="icon" /> Go back
       </Link>
       {/* <button type="button" onClick={() => navigate(-1)}>
         Go back

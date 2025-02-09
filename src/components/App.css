@@ -97,13 +97,17 @@ a {
 }
 
 .btn {
+  position: relative;
   box-shadow: 1px 1px 5px #022943;
-  padding: 4px 20px;
-  display: inline-block;
+  padding: 4px 10px;
+  display: flex;
   margin: 10px 0;
   border-radius: 8px;
   color: #022943;
   font-weight: 600;
+  align-items: center;
+  gap: 10px;
+  width: 114px;
 }
 
 .btn:hover,
@@ -112,6 +116,11 @@ a {
   background: linear-gradient(to right, #88cca4, #21b9d6);
   cursor: pointer;
   font-weight: 700;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
 }
 
 .listCast {
