@@ -1,7 +1,7 @@
 import MovieList from "../../components/MovieList";
 import { useEffect, useState } from "react";
 import { fetchMovies } from "../../services/api";
-
+import { GiFilmProjector } from "react-icons/gi";
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
 
@@ -16,7 +16,10 @@ const HomePage = () => {
 
   return (
     <div className="homeConteiner">
-      <h2>Trending today</h2>
+      <h1>
+        <GiFilmProjector />
+        Trending today
+      </h1>
       <MovieList movies={movies} />
     </div>
   );

@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import s from "./Header.module.css";
 import logo from "./tmdb.svg";
 const buildLinkClass = ({ isActive }) => {
@@ -8,7 +8,9 @@ const buildLinkClass = ({ isActive }) => {
 const Header = () => {
   return (
     <header>
-      <img src={logo} alt="logo" width={150} />
+      <Link to="/">
+        <img src={logo} alt="logo" width={150} />
+      </Link>
 
       <nav className={s.nav}>
         <NavLink className={buildLinkClass} to="/">

@@ -7,12 +7,24 @@
 .homeConteiner {
   padding: 10px 50px;
   background: linear-gradient(to right, #88cca4, #21b9d6);
+  min-height: 100vh;
+
 }
 
-h2 {
+.notFound {
+  text-align: center;
+}
+
+h2,
+h1 {
   text-align: center;
   color: #032541;
-  text-shadow: #f3f6f8 1px 4px 6px;
+  text-shadow: #cdcdce 1px 4px 6px;
+}
+
+h3 {
+  color: #032541;
+  text-shadow: #cdcdce 1px 1px 3px;
 }
 
 .movieList {
@@ -24,13 +36,17 @@ h2 {
   width: 60%;
   min-width: 320px;
   margin: 0 auto;
-  padding: 10px 20px;
+
 }
 
 .movieItem {
+  padding: 10px 16px;
   font-size: 18px;
   transition: background 0.s ease-in-out;
-
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  fill: #032541
 }
 
 a {
@@ -43,4 +59,126 @@ a {
   cursor: pointer;
   color: #032541;
   text-decoration: underline;
+}
+
+.movieDetails {
+  background-color: #f3f6f8;
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  border-radius: 8px;
+  box-shadow: #022943 1px 1px 5px;
+  border: none;
+  margin-bottom: 8px;
+}
+
+.movieDetails h2 {
+  text-align: left;
+}
+
+.movieImg {
+  width: 200px;
+  border-radius: 8px;
+  box-shadow: 1px 1px 5px #022943;
+}
+
+.btn {
+  box-shadow: 1px 1px 5px #022943;
+  padding: 4px 20px;
+  display: inline-block;
+  margin: 10px 0;
+  border-radius: 8px;
+  color: #022943;
+  font-weight: 600;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active {
+  background: linear-gradient(to right, #88cca4, #21b9d6);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.listCast {
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  padding: 10px;
+  justify-content: center;
+}
+
+.itemCast {
+  width: 150px;
+  border-radius: 8px;
+  box-shadow: 1px 1px 3px #21b9d6;
+}
+
+.itemCast img {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.nameCast {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.itemCast p {
+  padding: 4px;
+  text-align: center;
+}
+
+.navDetails {
+  display: flex;
+  gap: 20px;
+
+}
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.errorIcon {
+  fill: red;
+  width: 30px;
+  height: 30px;
+}
+
+.notFound h3 {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.noMovies {
+  text-align: center;
+  font-size: 22px;
+}
+
+.movieInfo {
+  margin-top: 20px;
+
+}
+
+.iconReview {
+  margin-right: 6px;
+  width: 30px;
+  height: 30px;
+}
+
+.itemReview {
+  display: flex;
+  gap: 8px;
+
+  flex-direction: column;
 }

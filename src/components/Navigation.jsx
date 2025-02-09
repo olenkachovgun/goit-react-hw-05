@@ -1,16 +1,22 @@
 import { NavLink } from "react-router-dom";
+
 const Navigation = ({ movieId }) => {
   return (
-    <div>
-      Navigation
+    <div className="movieDetails">
       <nav>
-        <ul>
-          Addinional information
+        <h3>Addinional information</h3>
+        <ul className="navDetails">
           <li>
-            <NavLink to={`/movies/${movieId}/cast`}> Cast </NavLink>
+            <NavLink className="btn" to={`/movies/${movieId}/cast`}>
+              {" "}
+              Cast{" "}
+            </NavLink>
           </li>
           <li>
-            <NavLink to={`/movies/${movieId}/reviews`}> Reviews </NavLink>
+            <NavLink className="btn" to={`/movies/${movieId}/reviews`}>
+              {" "}
+              Reviews{" "}
+            </NavLink>
           </li>
         </ul>
       </nav>

@@ -7,25 +7,20 @@ import { useLocation, useSearchParams } from "react-router-dom";
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
-  const query = searchParams.get("query") ?? "";
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
+  const query = searchParams.get("query") ?? " ";
   const location = useLocation();
   console.log(location);
 
   useEffect(() => {
     const getData = async () => {
-      if (!query) return;
+      if (!query) return setIsFirstLoad(false);
       try {
         const data = await fetchMovieQuery(query);
 
         setMovies(data);
       } catch (error) {
         console.log(error);
-        return (
-          <p>
-            There are no movies matching your search query. Try a different
-            query.
-          </p>
-        );
       }
     };
 
@@ -35,20 +30,23 @@ const MoviesPage = () => {
     // setQuery(query);
     searchParams.set("query", query);
     setSearchParams(searchParams);
+    setIsFirstLoad(false);
   };
   const filteredData = movies.filter((movie) =>
     movie.title.toLowerCase().includes(query.toLowerCase())
   );
 
   return (
-    <div>
+    <div className="homeConteiner">
       <SearchBar handleChangeQuery={handleChangeQuery} query={query} />
-      {filteredData.length > 0 ? (
+      {query && filteredData.length > 0 ? (
         <MovieList movies={filteredData} />
       ) : (
-        <p>
-          There are no movies matching your search query. Try a different query.
-        </p>
+        !isFirstLoad && (
+          <p className="noMovies">
+            There are no movies that matched your query.
+          </p>
+        )
       )}
     </div>
   );

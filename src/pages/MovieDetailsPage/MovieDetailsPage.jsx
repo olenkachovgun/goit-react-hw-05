@@ -31,13 +31,17 @@ const MovieDetailsPage = () => {
     return <h2>Loading...</h2>;
   }
   return (
-    <div>
-      <Link to={goBackUrl.current}> Go back </Link>
+    <div className="homeConteiner">
+      <Link className="btn" to={goBackUrl.current}>
+        {" "}
+        Go back{" "}
+      </Link>
       {/* <button type="button" onClick={() => navigate(-1)}>
         Go back
       </button> */}
-      <div>
+      <div className="movieDetails">
         <img
+          className="movieImg"
           src={
             movie.poster_path
               ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
@@ -47,13 +51,15 @@ const MovieDetailsPage = () => {
           alt={movie.title}
         />
         <div>
-          <h2>Name: {movie.title}</h2>
-          <p>User Score: {Math.round(movie.vote_average * 10)}%</p>
-          <h3>Overview</h3>
-          <p>{movie.overview}</p>
-          <h3>Genres</h3>
+          <h2> {movie.title}</h2>
+          <div className="movieInfo">
+            <h3>User Score: {Math.round(movie.vote_average * 10)}%</h3>
+            <h3>Overview:</h3>
+            <p>{movie.overview}</p>
+            <h3>Genres:</h3>
 
-          <p>{movie.genres.map((genre) => genre.name).join(", ")}</p>
+            <p>{movie.genres.map((genre) => genre.name).join(", ")}</p>
+          </div>
         </div>
       </div>
       <Navigation movieId={movieId} />

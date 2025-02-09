@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchMovieReviews } from "../services/api";
 import { useParams } from "react-router-dom";
+import { CgComment } from "react-icons/cg";
 const MovieReviews = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
@@ -19,18 +20,21 @@ const MovieReviews = () => {
   console.log(reviews);
 
   return (
-    <div>
+    <div className="movieDetails reviews">
       {reviews.length > 0 ? (
         reviews.map((item) => {
           return (
-            <li key={item.id}>
-              <p>{item.author}</p>
-              <p>{item.content}</p>
-            </li>
+            <div className="itemReview" key={item.id}>
+              <p className="nameCast">{item.author}</p>
+              <p>
+                <CgComment className="iconReview" />
+                {item.content}
+              </p>
+            </div>
           );
         })
       ) : (
-        <h2>No reviews available for this movie.</h2>
+        <p>No reviews available for this movie.</p>
       )}
     </div>
   );

@@ -20,12 +20,12 @@ const MovieCast = () => {
     getData();
   }, [movieId]);
   return (
-    <div>
+    <div className="movieDetails">
       {cast.length > 0 ? (
-        <ul>
+        <ul className="listCast">
           {cast.map((item) => {
             return (
-              <li key={item.castId}>
+              <li className="itemCast" key={item.castId}>
                 <img
                   src={
                     item.profile_path
@@ -35,7 +35,7 @@ const MovieCast = () => {
                   alt="photo"
                   width="100"
                 />
-                <p>{item.name}</p>
+                <p className="nameCast">{item.name}</p>
                 <p>{item.character}</p>
               </li>
             );
