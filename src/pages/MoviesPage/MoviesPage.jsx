@@ -8,13 +8,14 @@ const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const [isFirstLoad, setIsFirstLoad] = useState(true);
-  const query = searchParams.get("query") ?? " ";
+  const query = searchParams.get("query") ?? "";
   const location = useLocation();
   console.log(location);
 
   useEffect(() => {
+    if (!query) return;
     const getData = async () => {
-      if (!query) return setIsFirstLoad(false);
+      setIsFirstLoad(false);
       try {
         const data = await fetchMovieQuery(query);
 
